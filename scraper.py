@@ -50,6 +50,7 @@ def grab_entry(url):
         else:
             meta[label] = clean(content)
     if 'source_url' in meta:
+        print meta['source_url']
         collection.ingest(meta.get('source_url'), **meta)
 
 
