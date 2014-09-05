@@ -49,7 +49,7 @@ def grab_entry(url):
             meta[label] = filter(lambda s: len(s), items)
         else:
             meta[label] = clean(content)
-    if 'source_url' in meta:
+    if 'pdf' in meta.get('source_url', ''):
         print meta['source_url']
         collection.ingest(meta.get('source_url'), **meta)
 
